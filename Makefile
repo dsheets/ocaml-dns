@@ -1,4 +1,4 @@
-.PHONY: all clean distclean setup build doc install test
+.PHONY: all clean distclean setup build doc install uninstall reinstall test
 all: build
 
 J ?= 2
@@ -33,8 +33,13 @@ doc: setup.data setup.bin
 	./setup.bin -doc -j $(J) $(OFLAGS)
 
 install: 
-	ocamlfind remove $(NAME) $(OFLAGS)
 	./setup.bin -install
+
+uninstall:
+	./setup.bin -uninstall
+
+reinstall:
+	./setup.bin -reinstall
 
 setup.bin: setup.ml
 	ocamlopt.opt -o $@ $< || ocamlopt -o $@ $< || ocamlc -o $@ $<
