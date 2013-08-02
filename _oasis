@@ -112,6 +112,15 @@ Executable load_key
   Install:            false
   BuildDepends:       dns.lwt, ipaddr, cryptokit
 
+Executable test_robustness
+  Path:               lib_test
+  MainIs:             test_robustness.ml
+  Build$:             flag(tests) && flag(lwt)
+  Custom:             true
+  CompiledObject:     best
+  Install:            false
+  BuildDepends:       dns.lwt
+
 Test lwt_server
   Run$:               flag(tests) && flag(lwt)
   Command:            $lwt_server
