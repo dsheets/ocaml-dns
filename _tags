@@ -1,5 +1,5 @@
 # OASIS_START
-# DO NOT EDIT (digest: 550575c921c9165830b284111fb5d374)
+# DO NOT EDIT (digest: d2a3bb4c6a0285b4fe7a89b6cdb3b6fd)
 # Ignore VCS directories, you can use the same kind of rule outside 
 # OASIS_START/STOP if you want to exclude directories that contains 
 # useless stuff for the build process
@@ -121,6 +121,18 @@
 <lib_test/load_key.{native,byte}>: pkg_re.str
 <lib_test/load_key.{native,byte}>: pkg_cstruct
 <lib_test/load_key.{native,byte}>: pkg_cstruct.syntax
+<lib_test/load_key.{native,byte}>: custom
+# Executable test_robustness
+<lib_test/test_robustness.{native,byte}>: use_lwt
+<lib_test/test_robustness.{native,byte}>: use_dns
+<lib_test/test_robustness.{native,byte}>: pkg_ipaddr
+<lib_test/test_robustness.{native,byte}>: pkg_cryptokit
+<lib_test/test_robustness.{native,byte}>: pkg_lwt.unix
+<lib_test/test_robustness.{native,byte}>: pkg_lwt.syntax
+<lib_test/test_robustness.{native,byte}>: pkg_re
+<lib_test/test_robustness.{native,byte}>: pkg_re.str
+<lib_test/test_robustness.{native,byte}>: pkg_cstruct
+<lib_test/test_robustness.{native,byte}>: pkg_cstruct.syntax
 <lib_test/*.ml{,i}>: use_lwt
 <lib_test/*.ml{,i}>: use_dns
 <lib_test/*.ml{,i}>: pkg_ipaddr
@@ -131,7 +143,7 @@
 <lib_test/*.ml{,i}>: pkg_re.str
 <lib_test/*.ml{,i}>: pkg_cstruct
 <lib_test/*.ml{,i}>: pkg_cstruct.syntax
-<lib_test/load_key.{native,byte}>: custom
+<lib_test/test_robustness.{native,byte}>: custom
 # OASIS_STOP
 true: annot
 <lib/*>: syntax_camlp4o, pkg_lwt.syntax
